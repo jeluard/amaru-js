@@ -1,4 +1,5 @@
 setup-lib:
+	npm install -g wasm-pack
 	cd lib; npm i
 
 build-lib: setup-lib
