@@ -1,0 +1,8 @@
+{
+    "scripts": {
+      "build": "wasm-pack build --dev --target web --out-dir pkg"
+    },
+    "devDependencies": {
+      "@wasm-tool/wasm-pack-plugin": "1.7.0"
+    }
+  }

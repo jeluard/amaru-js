@@ -1,8 +1,18 @@
-setup:
-	npm i
+setup-lib:
+	cd lib; npm i
 
-run: setup
-	npm run serve
+build-lib: setup-lib
+	cd lib; npm run build
 
-build: setup
-	npm run build
+setup-ui:
+	cd ui; npm i
+
+build-ui: setup
+	cd ui; npm run build
+
+setup: setup-lib setup-ui
+
+build: setup build-lib build-ui
+
+dev: setup build-lib
+	cd ui; npm run dev

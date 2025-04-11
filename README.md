@@ -5,6 +5,6 @@ See [index.js](./index.js) for some example.
 ## Dev workflow
 
 ```
-make run
-// Then browse http://localhost:8080/
+make dev
+// Then browse the link as shown in your console
 ```

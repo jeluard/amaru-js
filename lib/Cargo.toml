@@ -1,0 +1,16 @@
+[package]
+name = "amaru-js"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2.100"
+amaru-kernel = { git = "https://github.com/pragma-org/amaru.git" }
+amaru-ledger = { git = "https://github.com/pragma-org/amaru.git" }
+web-sys = { version = "0.3.77", features = ["console"] }
+hex = "0.4.3"
+console_error_panic_hook = "0.1.7"
+serde-wasm-bindgen = "0.6.5"

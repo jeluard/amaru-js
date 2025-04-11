@@ -27,6 +27,7 @@ dependencies = [
 [[package]]
 name = "amaru-kernel"
 version = "0.1.0"
+source = "git+https://github.com/pragma-org/amaru.git#9cf12283028090ed519cf7e94118c8901d04d7ef"
 dependencies = [
  "bech32 0.11.0",
  "hex",
@@ -46,6 +47,7 @@ dependencies = [
 [[package]]
 name = "amaru-ledger"
 version = "0.1.0"
+source = "git+https://github.com/pragma-org/amaru.git#9cf12283028090ed519cf7e94118c8901d04d7ef"
 dependencies = [
  "amaru-kernel",
  "amaru-ouroboros-traits",
@@ -63,6 +65,7 @@ dependencies = [
 [[package]]
 name = "amaru-ouroboros-traits"
 version = "0.1.0"
+source = "git+https://github.com/pragma-org/amaru.git#9cf12283028090ed519cf7e94118c8901d04d7ef"
 dependencies = [
  "amaru-kernel",
 ]
@@ -213,6 +216,7 @@ checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 [[package]]
 name = "iter-borrow"
 version = "0.1.0"
+source = "git+https://github.com/pragma-org/amaru.git#9cf12283028090ed519cf7e94118c8901d04d7ef"
 dependencies = [
  "minicbor",
 ]
@@ -640,6 +644,7 @@ dependencies = [
 [[package]]
 name = "slot-arithmetic"
 version = "0.1.0"
+source = "git+https://github.com/pragma-org/amaru.git#9cf12283028090ed519cf7e94118c8901d04d7ef"
 dependencies = [
  "hex",
  "minicbor",

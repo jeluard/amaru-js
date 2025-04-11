@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import init, { Ledger } from "amaru-js"
 
@@ -12,50 +10,8 @@ function App() {
     useEffect(() => {
       init().then(() => {
         class Storage {
-          constructor(name, number) {
-              this.name = name;
-              this._number = number;
-          }
-      
-          store() {
-              const request = indexedDB.open("test", 3);
-              console.log("store")
-              request.onupgradeneeded = (event) => {
-                  console.log('**** onupgradeneeded');
-                const db = event.target.result;
-              
-                // Create another object store called "names" with the autoIncrement flag set as true.
-                const objStore = db.createObjectStore("names", { autoIncrement: true });
-              
-                // Because the "names" object store has the key generator, the key for the name value is generated automatically.
-                // The added records would be like:
-                // key : 1 => value : "Bill"
-                // key : 2 => value : "Donna"
-                customerData.forEach((customer) => {
-                  objStore.add(customer.name);
-                });
-              };
-      
-              request.onsuccess = (event) => {
-                  console.log('**** onsuccess');
-              };
-      
-      
-              return `Hello, my name is ${this.name}.`;
-          }
-      
-          number() {
-              return this._number;
-          }
-      }
-      
-      const handler = {
-          get(target, prop, receiver) {
-              console.log('**** prop', prop);
-              return Reflect.get(...arguments);
-          },
-      };
-        const ledger = new Ledger(new Proxy(new Storage('Amaru', 21), handler));
+        }
+        const ledger = new Ledger(new Storage());
         try {
           ledger.forward(rawBlock);
           setError(null);
@@ -74,10 +30,10 @@ function App() {
         <textarea id="raw-block" value={rawBlock} onChange={(e) => setRawBlock(e.target.value)} />
       </div>
       {error && (
-              <p>
-              {error}
-            </p>
-        )}
+        <p>
+          {error}
+        </p>
+      )}
     </>
   )
 }
