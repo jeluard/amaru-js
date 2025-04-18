@@ -52,3 +52,12 @@ export default tseslint.config({
   },
 })
 ```
+
+
+# Publish
+
+```shell
+npm run build
+npm login
+npm publish
+```
