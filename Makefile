@@ -8,12 +8,10 @@ build-lib: setup-lib
 setup-ui:
 	cd ui; npm i
 
-build-ui: setup
+build-ui: setup-ui
 	cd ui; npm run build
 
-setup: setup-lib setup-ui
+build: build-lib build-ui
 
-build: setup build-lib build-ui
-
-dev: setup build-lib
+dev: build-lib
 	cd ui; npm run dev
